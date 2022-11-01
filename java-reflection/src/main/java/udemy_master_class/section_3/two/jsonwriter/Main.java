@@ -1,6 +1,8 @@
 package udemy_master_class.section_3.two.jsonwriter;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import udemy_master_class.section_3.two.data.Address;
 import udemy_master_class.section_3.two.data.Company;
 import udemy_master_class.section_3.two.data.Person;
@@ -11,7 +13,8 @@ public class Main {
 
         Company company = new Company("Linkedin", "San Francisco", new Address("Slicon", (short) 454));
         Address address = new Address("Main Street", (short) 2);
-        Person person = new Person("John", true, 25, 1000.231f, address, company);
+        Person person = new Person("John", true, 25,
+                1000.231f, new String[]{"Football", "Tennis", "Basketball"}, Arrays.asList(1,2,3,4), address, company);
 
         String json = objectToJson(person, 0);
 
@@ -39,9 +42,11 @@ public class Main {
             stringBuilder.append(" : ");
 
             if (field.getType().isPrimitive()) {
-                stringBuilder.append(formatPrimitiveValue(field, instance));
+                stringBuilder.append(formatPrimitiveValue(field.get(instance), field.getType()));
             } else if (field.getType().equals(String.class)) {
                 stringBuilder.append(formatStringValue(field.get(instance).toString()));
+            } else if (field.getType().isArray()) {
+                stringBuilder.append(arrayToJson(field.get(instance), indentSize + 1));
             } else {
                 stringBuilder.append(objectToJson(field.get(instance), indentSize + 1));
             }
@@ -58,21 +63,55 @@ public class Main {
         return stringBuilder.toString();
     }
 
+    private static String arrayToJson(Object arrayInstance, int indentSize) throws IllegalAccessException {
+        StringBuilder stringBuilder = new StringBuilder();
+        int arrayLength = Array.getLength(arrayInstance);
+
+        Class<?> componentType = arrayInstance.getClass().getComponentType();
+        stringBuilder.append("[");
+        stringBuilder.append("\n");
+
+        for (int i = 0; i < arrayLength; i++) {
+            Object element = Array.get(arrayInstance, i);
+
+            if (componentType.isPrimitive()) {
+                stringBuilder.append(indent(indentSize + 1));
+                stringBuilder.append(formatPrimitiveValue(element, componentType));
+            } else if (componentType.equals(String.class)) {
+                stringBuilder.append(indent(indentSize + 1));
+                stringBuilder.append(formatStringValue(element.toString()));
+            } else {
+                System.out.println(element.getClass().getTypeName());
+//                stringBuilder.append(objectToJson(element, indentSize + 1));
+            }
+
+            if (i != arrayLength - 1) {
+                stringBuilder.append(",");
+            }
+            stringBuilder.append("\n");
+
+        }
+
+        stringBuilder.append(indent(indentSize));
+        stringBuilder.append("]");
+        return stringBuilder.toString();
+    }
+
     private static String indent(int indentSize) {
         return "\t".repeat(Math.max(0, indentSize));
     }
 
-    private static String formatPrimitiveValue(Field field, Object parentInstance) throws IllegalAccessException {
-        if (field.getType().equals(boolean.class)
-                || field.getType().equals(int.class)
-                || field.getType().equals(long.class)
-                || field.getType().equals(short.class)) {
-            return field.get(parentInstance).toString();
-        } else if (field.getType().equals(double.class) || field.getType().equals(float.class)) {
-            return String.format("%.02f", field.get(parentInstance));
-        }
+    private static String formatPrimitiveValue(Object instance, Class<?> type) {
 
-        throw new RuntimeException(String.format("Type : %s is unsupported", field.getType().getName()));
+        if (type.equals(boolean.class)
+                || type.equals(int.class)
+                || type.equals(long.class)
+                || type.equals(short.class)) {
+            return instance.toString();
+        } else if (type.equals(double.class) || type.equals(float.class)) {
+            return String.format("%.02f", instance);
+        }
+        throw new RuntimeException(String.format("Type : %s is unsupported", type.getName()));
     }
 
     private static String formatStringValue(String value) {

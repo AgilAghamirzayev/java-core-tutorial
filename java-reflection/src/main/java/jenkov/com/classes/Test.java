@@ -1,4 +1,4 @@
-package jenkov.com;
+package jenkov.com.classes;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
