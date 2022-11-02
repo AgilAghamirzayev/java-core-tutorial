@@ -10,8 +10,7 @@ public class HttpClient {
 
     public boolean sendRequest(String data) {
         System.out.println(String.format("Request with body : %s was successfully sent to server with address : %s",
-                data,
-                serverAddress));
+                data, serverAddress));
         return true;
     }
 }

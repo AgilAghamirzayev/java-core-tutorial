@@ -8,11 +8,12 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import udemy_master_class.section_5.one.api.Product;
 
 public class ProductTest {
     public static void main(String[] args) {
-        testGetters(ProductTest.class);
-        testSetters(ProductTest.class);
+        testGetters(Product.class);
+        testSetters(Product.class);
     }
 
     public static void testSetters(Class<?> dataClass) {
