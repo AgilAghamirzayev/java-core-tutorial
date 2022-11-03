@@ -130,3 +130,13 @@ Sconcurrency-multithreading/src/main/java/jakobjenkovyoutube/one/ThreadExample6.
 Sconcurrency-multithreading/src/main/java/jakobjenkovyoutube/one/ThreadExample7.java,5\3\53f13e1042ac3f16b60da7cc9aff6808a6795af3
 å
 \java-reflection/src/main/java/udemy_master_class/section_4/one/data/UserInterfaceConfig.java,d\f\dfde3a6a931b6b11811f0a22e637ab2fde412c2e
+ã
+[java-reflection/src/main/java/udemy_master_class/section_5/two/database/DatabaseClient.java,5\d\5df44844a8fc991704c5e6783ffe26194aa204ce
+Å
+Qjava-reflection/src/main/java/udemy_master_class/section_5/two/udp/UdpClient.java,3\2\3276a58d37dfe8f36c169d40f7a3f78dab458854
+Ü
+Vjava-reflection/src/main/java/udemy_master_class/section_5/two/logging/FileLogger.java,5\2\527d6f3ac0cf1df52d45497e0508684868ddf286
+É
+Sjava-reflection/src/main/java/udemy_master_class/section_5/two/http/HttpClient.java,4\4\44bfc8ac95751ed992face49e17ab8d15f33014e
+Ñ
+Tjava-reflection/src/main/java/udemy_master_class/section_5/one/test/ProductTest.java,8\8\88658c933ad3835aaebe9f5899892a51a3359da2
