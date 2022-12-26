@@ -1,4 +1,4 @@
-package udemy_master_class.section_7.task;
+package udemy_master_class.section_7.task1;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
