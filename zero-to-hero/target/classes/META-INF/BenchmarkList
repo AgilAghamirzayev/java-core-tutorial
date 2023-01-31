@@ -1,0 +1,5 @@
+JMH S 18 integer_cache.Test S 55 integer_cache.jmh_generated.Test_createIntMore1_jmhTest S 14 createIntMore1 S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
+JMH S 18 integer_cache.Test S 55 integer_cache.jmh_generated.Test_createIntMore2_jmhTest S 14 createIntMore2 S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
+JMH S 18 integer_cache.Test S 55 integer_cache.jmh_generated.Test_createIntMore3_jmhTest S 14 createIntMore3 S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
+JMH S 18 integer_cache.Test S 61 integer_cache.jmh_generated.Test_createIntegerLess127_jmhTest S 20 createIntegerLess127 S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 
+JMH S 18 integer_cache.Test S 61 integer_cache.jmh_generated.Test_createIntegerMore127_jmhTest S 20 createIntegerMore127 S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E U 11 NANOSECONDS E E 

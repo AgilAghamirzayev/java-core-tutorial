@@ -7,9 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="java-performance-tuning-memory-management" />
         <module name="java-reflection" />
         <module name="concurrency-multithreading" />
-        <module name="java-performance-tuning-memory-management" />
+        <module name="java-interview-questions" />
+        <module name="zero-to-hero" />
       </profile>
     </annotationProcessing>
   </component>

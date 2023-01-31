@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/java-performance-tuning-memory-management/pom.xml" />
         <option value="$PROJECT_DIR$/java-reflection/pom.xml" />
         <option value="$PROJECT_DIR$/concurrency-multithreading/pom.xml" />
+        <option value="$PROJECT_DIR$/zero-to-hero/pom.xml" />
+        <option value="$PROJECT_DIR$/java-interview-questions/pom.xml" />
       </list>
     </option>
   </component>

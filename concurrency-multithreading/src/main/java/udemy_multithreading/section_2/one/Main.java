@@ -1,5 +1,8 @@
 package udemy_multithreading.section_2.one;
 
+import java.util.Comparator;
+import java.util.function.BiFunction;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
@@ -16,5 +19,6 @@ public class Main {
         System.out.println("We are in thread: " + Thread.currentThread().getName() + " before starting the new thread");
         thread.start();
         System.out.println("We are in thread: " + Thread.currentThread().getName() + " after starting the new thread");
+
     }
 }
