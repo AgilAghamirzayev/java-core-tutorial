@@ -1,4 +1,4 @@
-package abstraction.abstractc.first;
+package oop.abstraction.abstractc.first;
 
 import java.awt.*;
 import java.util.ArrayList;

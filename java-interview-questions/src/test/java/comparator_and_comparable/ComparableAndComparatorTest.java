@@ -1,3 +1,5 @@
+package comparator_and_comparable;
+
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -7,7 +9,7 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class ComparableAndComparator {
+public class ComparableAndComparatorTest {
 
     @Test
     public void sortInts() {
@@ -32,7 +34,7 @@ public class ComparableAndComparator {
         final List<NotComparable> objects = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            objects.add(new NotComparable(i));
+            objects.add(new NotComparable());
         }
 
         try {
