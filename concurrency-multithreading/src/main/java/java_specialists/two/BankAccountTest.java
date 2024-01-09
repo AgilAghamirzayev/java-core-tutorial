@@ -22,7 +22,6 @@ public class BankAccountTest {
 
         Thread.sleep(3000);
         System.out.println(account.getBalance());
-
     }
 
 }
