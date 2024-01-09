@@ -19,6 +19,6 @@ public class Main {
         System.out.println("We are in thread: " + Thread.currentThread().getName() + " before starting the new thread");
         thread.start();
         System.out.println("We are in thread: " + Thread.currentThread().getName() + " after starting the new thread");
-
+        System.out.println("tets");
     }
 }
