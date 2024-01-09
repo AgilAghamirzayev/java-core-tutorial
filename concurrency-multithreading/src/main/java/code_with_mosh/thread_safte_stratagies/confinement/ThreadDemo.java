@@ -1,6 +1,5 @@
 package code_with_mosh.thread_safte_stratagies.confinement;
 
-import lombok.SneakyThrows;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +7,7 @@ import java.util.Optional;
 
 public class ThreadDemo {
 
-    @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         List<Thread> threads = new ArrayList<>();
         List<DownloadFileTask> tasks = new ArrayList<>();
 

@@ -1,15 +1,12 @@
 package code_with_mosh.second;
 
-import code_with_mosh.first.DownloadFileTask;
-import lombok.SneakyThrows;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ThreadDemo {
 
-    @SneakyThrows
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         var status = new DownloadStatus();
 
         List<Thread> threads = new ArrayList<>();

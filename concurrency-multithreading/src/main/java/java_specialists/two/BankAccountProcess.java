@@ -1,11 +1,13 @@
 package java_specialists.two;
 
-import lombok.AllArgsConstructor;
 
-@AllArgsConstructor
 public class BankAccountProcess implements Runnable {
 
     private final BankAccount bankAccount;
+
+    public BankAccountProcess(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
+    }
 
     @Override
     public void run() {

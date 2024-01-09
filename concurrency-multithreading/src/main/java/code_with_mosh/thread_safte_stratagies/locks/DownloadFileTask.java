@@ -1,7 +1,5 @@
 package code_with_mosh.thread_safte_stratagies.locks;
 
-import lombok.SneakyThrows;
-
 public class DownloadFileTask implements Runnable {
 
     private DownloadStatus status;
@@ -10,7 +8,6 @@ public class DownloadFileTask implements Runnable {
         this.status = status;
     }
 
-    @SneakyThrows
     @Override
     public void run() {
         System.out.println("Downloading a file: " + Thread.currentThread().getName());

@@ -1,7 +1,5 @@
 package udemy_multithreading.section_2.two;
 
-import lombok.SneakyThrows;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -29,8 +27,7 @@ public class HackerAndPolice {
             this.password = password;
         }
 
-        @SneakyThrows
-        public boolean isCorrectPassword(int guess) {
+        public boolean isCorrectPassword(int guess) throws InterruptedException {
             Thread.sleep(5);
             return this.password == guess;
         }
@@ -61,9 +58,13 @@ public class HackerAndPolice {
         @Override
         public void run() {
             for (int guess = 0; guess < MAX_PASSWORD; guess++) {
-                if (vault.isCorrectPassword(guess)) {
-                    System.out.println(this.getName() + " guessed the password " + guess);
-                    System.exit(0);
+                try {
+                    if (vault.isCorrectPassword(guess)) {
+                        System.out.println(this.getName() + " guessed the password " + guess);
+                        System.exit(0);
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
             }
         }
@@ -78,9 +79,13 @@ public class HackerAndPolice {
         @Override
         public void run() {
             for (int guess = MAX_PASSWORD; guess >= 0; guess--) {
-                if (vault.isCorrectPassword(guess)) {
-                    System.out.println(this.getName() + " guessed the password " + guess);
-                    System.exit(0);
+                try {
+                    if (vault.isCorrectPassword(guess)) {
+                        System.out.println(this.getName() + " guessed the password " + guess);
+                        System.exit(0);
+                    }
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
                 }
             }
         }
@@ -88,10 +93,13 @@ public class HackerAndPolice {
 
     private static class PoliceThread extends Thread {
         @Override
-        @SneakyThrows
         public void run() {
             for (int i = 10; i > 0; i--) {
-                Thread.sleep(1000);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println(i);
             }
             System.out.println("Game over for you hackers");
