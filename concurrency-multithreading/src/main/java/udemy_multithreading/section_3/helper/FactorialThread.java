@@ -1,9 +1,9 @@
-package udemy_multithreading.section_3.joining;
+package udemy_multithreading.section_3.helper;
 
 import java.math.BigInteger;
 
 public class FactorialThread extends Thread {
-    private long inputNumber;
+    private final long inputNumber;
     private BigInteger result = BigInteger.ZERO;
     private boolean isFinished = false;
 
@@ -14,13 +14,12 @@ public class FactorialThread extends Thread {
     @Override
     public void run() {
         this.result = factorial(inputNumber);
-        this.isFinished = true;
-    }
+        this.isFinished = true;    }
 
     private BigInteger factorial(long n) {
         BigInteger tempResult = BigInteger.ONE;
-        for (long i = n; i > 0; i--) {
-            tempResult = tempResult.multiply(new BigInteger(Long.toString(i)));
+        for (long l = n; l > 0; l--) {
+            tempResult = tempResult.multiply(new BigInteger(Long.toString(l)));
         }
         return tempResult;
     }
