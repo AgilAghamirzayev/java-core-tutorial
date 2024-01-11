@@ -1,4 +1,4 @@
-package udemy_multithreading.section_2.two;
+package udemy_multithreading.sec01.two;
 
 import java.util.ArrayList;
 import java.util.List;

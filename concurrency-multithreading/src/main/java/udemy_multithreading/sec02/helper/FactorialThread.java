@@ -1,4 +1,4 @@
-package udemy_multithreading.section_3.helper;
+package udemy_multithreading.sec02.helper;
 
 import java.math.BigInteger;
 

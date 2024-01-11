@@ -1,4 +1,4 @@
-package udemy_multithreading.section_2.one;
+package udemy_multithreading.sec01.one;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

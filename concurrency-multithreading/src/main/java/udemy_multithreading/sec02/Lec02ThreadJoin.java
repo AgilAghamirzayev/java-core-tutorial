@@ -1,9 +1,10 @@
-package udemy_multithreading.section_3;
+package udemy_multithreading.sec02;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import udemy_multithreading.section_3.helper.FactorialThread;
+import udemy_multithreading.sec02.helper.FactorialThread;
 
 public class Lec02ThreadJoin {
     public static void main(String[] args) {
@@ -30,6 +31,5 @@ public class Lec02ThreadJoin {
                 System.out.println("The calculation for " + inputNumbers.get(i) + " is still in progress");
             }
         }
-
     }
 }

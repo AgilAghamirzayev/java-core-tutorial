@@ -1,4 +1,4 @@
-package udemy_multithreading.section_2.two;
+package udemy_multithreading.sec01.two;
 
 public class Main {
     public static void main(String[] args) {
